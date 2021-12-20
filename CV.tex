@@ -1,0 +1,128 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%            READ THIS TO GET IT TO COMPILE CORRECTLY                %%%%%%%%%%%%
+%%%%%%%%                                                                    %%%%%%%%%%%%
+%%%%%%%%                                                                    %%%%%%%%%%%%
+%%%%%%%% To get it to compile it is a 3 step process                        %%%%%%%%%%%%
+%%%%%%%% 1) Build and compile (F5 in TexStudio) to generate the .aux file   %%%%%%%%%%%%
+%%%%%%%% 2) Run bibtex (F8 or Tools>Commands>BibTeX in TexStudio)           %%%%%%%%%%%%
+%%%%%%%% 1) Build and compile (F5 in TexStudio) to generate the PDF         %%%%%%%%%%%%
+%%%%%%%% 																	%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[letterpaper]{moderncv}
+\moderncvstyle{classic} 
+
+%%%%%%%%%%%%%% adding packages for bibtex publications  %%%%%%%%%%%%%%%%%
+\usepackage{url}
+\usepackage{bibentry}
+\makeatletter\let\saved@bibitem\@bibitem\makeatother
+%\usepackage[colorlinks=true,breaklinks=true]{hyperref}		% commented out as is already in modern CV
+\makeatletter\let\@bibitem\saved@bibitem\makeatother
+\usepackage[numbers]{natbib}											% added to get rid of the "\lonely item" error. everthing in this list works [square,sort,comma,numbers]
+
+%%%%%%%%%%%%%% adding packages for formating and other basic functions  %%%%%%%%%%%%%%%%%
+\usepackage[left=0.5in, right=1in, top=1in, bottom=1in]{geometry} % defining the page margins
+\usepackage{fontawesome}		% added for Linked-In and GitHub icon
+\usepackage[bottom]{footmisc}	% added for the footnote to allow the date on the last page
+\usepackage{enumitem}			% added for adjusting the indent of publications. adjusted locally at each list
+\usepackage{adjustbox}
+
+%%%%%%%%%%%%%%  a reimplementation of etaremune using enumitem that enables custom labels %%%%%%%%%%%%%%%%%
+\usepackage{refcount}
+\makeatletter
+\AddEnumerateCounter*{\reversearabic}{\@reversearabic}{2}
+\newcommand{\reversearabic}[1]{\expandafter\@reversearabic\csname c@#1\endcsname}
+\newcommand{\@reversearabic}[1]{%
+  \number\numexpr\getrefnumber{this@etaremune@\romannumeral\c@etaremune}-#1+1\relax
+}
+\newcounter{etaremune}
+\newenvironment{etaremune}[1][]{%
+  \stepcounter{etaremune}%
+  \begin{enumerate}[label=\reversearabic*.,#1]%
+}{%
+  \edef\@currentlabel{\the\csname c@\@enumctr\endcsname}%
+  \label{this@etaremune@\romannumeral\c@etaremune}%
+  \end{enumerate}%
+}
+\makeatother
+
+
+%%%%%%%%%%%%%% Setting up the document  %%%%%%%%%%%%%%%%%
+
+\setlength{\hintscolumnwidth}{2.9cm} % change width of left colomn
+
+% build a command for the date modified footnote
+\newcommand\blfootnote[1]{%
+ \begingroup
+ \renewcommand\thefootnote{}\footnote{#1}%
+ \addtocounter{footnote}{-1}%
+ \endgroup
+}
+
+% define the colors of the CV
+\definecolor{color1}{RGB}{160 0, 10} % USC Garnet, with a little more red
+\definecolor{color2}{RGB}{0,0,0} % black used for title 
+\newcommand{\blueLink}[1]{\textcolor[rgb]{0.02,0.27,0.68}{#1}} %blue used for external links
+
+%% define the personal data used in the CV
+\firstname{Joe}
+\familyname{Smith}
+\title{Curriculum Vitae}
+\address{University}{City in a State} 
+\email{email@University.edu} 
+\homepage{www.Research.University.edu}
+\extrainfo{\faGithub \hspace{0.01ex} \httplink{github.com/Joe Smith} \\
+\faLinkedinSquare \hspace{0.01ex} \httplink{www.linkedin.com/in/Joe-Smith} 
+}
+
+% PDF meta data
+\AfterPreamble{\hypersetup{
+ pdfauthor={Joe Smith},
+ pdftitle={CV for Joe Smith},
+ pdfsubject={Detailed academic curriculum vitae (CV) for Joe Smith},
+ urlcolor=blue,colorlinks=blue
+}}
+
+\begin{document}
+	\makecvtitle
+	\nobibliography{publications}
+	\bibliographystyle{plainurl}%unsrt} % plain works
+
+
+
+    \section{Professional Academic Experience}
+        \cvitem{2018 - present}{\textbf{Assistant Professor}, Department of Mechanical Engineering, University of a City in a State.}
+        
+							
+	\section{Education}
+		\cvitem{2009 - 2014}{\textbf{B.S.}, Engineering, University of a City in a State.} 
+	
+	\section{Journal Articles}
+
+  \begin{etaremune}[label={[\reversearabic*]},itemsep=1ex, leftmargin=3.2cm,labelsep=0.3cm]
+    \item \bibentry{Downey2020Millisecondmodelupdating}
+    \item \bibentry{Downey2019Durabilityweatherabilitystyrene}
+    \item \bibentry{Downey2019Cambasedpassive}
+    \item \bibentry{Downey2019Useflexiblesensor}
+    \item \bibentry{Downey2019Physicsbasedprognostics}
+  \end{etaremune}
+
+	\section{Conference Proceedings}
+
+  \begin{etaremune}[label={[\reversearabic*]},itemsep=1ex, leftmargin=3.2cm,labelsep=0.3cm]
+    \item \bibentry{Downey2019MethodologyRealtime}
+    \item \bibentry{Downey2018Durabilityassessmentsoft}
+    \item \bibentry{Downey2018CrackdetectionRC}
+    \item \bibentry{Downey2017DynamicReconstructionplane}
+    \item \bibentry{Downey2017Continuousembeddedsolutions}
+    \item \bibentry{Downey2017Experimentaldamagedetection}
+    \item \bibentry{Downey2017Damagedetectionlocalization}
+    \item \bibentry{Downey2016ExperimentalStudyThin}
+    \item \bibentry{Downey2016DamageDetectionWind}
+  \end{etaremune}
+
+
+
+		\blfootnote{Last updated on \today} %\vspace{-\baselineskip}
+
+\end{document}

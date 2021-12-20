@@ -1,0 +1,11 @@
+
+*.gz
+*.bak
+*.bbl
+*.aux
+Downey_CV.out
+Downey_CV.log
+Downey_CV.blg
+*.blg
+*.log
+*.out
