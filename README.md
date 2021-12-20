@@ -2,7 +2,7 @@
 Development of an Academic CV developed around BibTeX which allows for the listing of all publication on the CV from a single .bib file. 
 
 The CV output looks like this:
-![Image of NMR](images/CV_2_pages.jpg)
+![Image of NMR](CV_2_pages.jpg)
 
 To get it to compile it is a 3 step process
 1. Build and compile (F5 in TexStudio) to generate the .aux file.
