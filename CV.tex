@@ -27,6 +27,14 @@
 \usepackage{enumitem}			% added for adjusting the indent of publications. adjusted locally at each list
 \usepackage{adjustbox}
 
+%%%%%%%%%%%%%% Added to break long URLs in Bibtex  %%%%%%%%%%%%%%%%%
+% taken from:
+% 1) user570593 in https://tex.stackexchange.com/questions/115690/urls-in-bibliography-latex-not-breaking-line-as-expected
+% 2) https://norwied.wordpress.com/2012/07/10/how-to-break-long-urls-in-bibtex/
+% Note that I get conflicts if I add the hyperref backage
+\def\UrlBreaks{\do\/\do-}
+\usepackage{breakurl}
+
 %%%%%%%%%%%%%%  a reimplementation of etaremune using enumitem that enables custom labels %%%%%%%%%%%%%%%%%
 \usepackage{refcount}
 \makeatletter
@@ -121,8 +129,13 @@
     \item \bibentry{Downey2016DamageDetectionWind}
   \end{etaremune}
 
-
-
+	
+	\section{Open Source Hardware}
+	
+		\begin{etaremune}[label={[\reversearabic*]},itemsep=1ex, leftmargin=3.2cm,labelsep=0.3cm]
+			\item \bibentry{Flemming2022SolarChargedUAV}
+		\end{etaremune}
+			
 		\blfootnote{Last updated on \today} %\vspace{-\baselineskip}
 
 \end{document}
