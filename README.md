@@ -1,3 +1,6 @@
+
+Note: With the new release of fontawesome5 (https://ctan.org/pkg/fontawesome5?lang=en) it messed up the modernCV icons so as of now, this build does not work with icons installed on the most recent MikTeX intsall. You can remove icons to make it work as needed.
+
 # Academic-CV-with-BibTeX
 Development of an Academic CV developed around BibTeX which allows for the listing of all publication on the CV from a single .bib file. 
 
