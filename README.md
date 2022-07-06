@@ -2,6 +2,9 @@
 # Academic-CV-with-BibTeX
 Development of an Academic CV developed around BibTeX which allows for the listing of all publication on the CV from a single .bib file. 
 
+> :warning: **Requires Texlive 2022 or a very updated MikTeX. Note that many Linux program managers are not updated yet. **: Be very careful here!
+
+
 The CV output looks like this:
 ![Image of NMR](CV_2_pages.jpg)
 
