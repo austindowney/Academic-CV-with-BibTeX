@@ -2,7 +2,7 @@
 %%%%%%%%            READ THIS TO GET IT TO COMPILE CORRECTLY                %%%%%%%%%%%%
 %%%%%%%%                                                                    %%%%%%%%%%%%
 %%%%%%%%                                                                    %%%%%%%%%%%%
-%%%%%%%% To get it to compile it is a 3 step process                        %%%%%%%%%%%%
+%%%%%%%% To get it to compile it is a 3-step process                        %%%%%%%%%%%%
 %%%%%%%% 1) Build and compile (F5 in TexStudio) to generate the .aux file   %%%%%%%%%%%%
 %%%%%%%% 2) Run bibtex (F8 or Tools>Commands>BibTeX in TexStudio)           %%%%%%%%%%%%
 %%%%%%%% 1) Build and compile (F5 in TexStudio) to generate the PDF         %%%%%%%%%%%%
@@ -12,15 +12,15 @@
 \documentclass[letterpaper]{moderncv}
 \moderncvstyle{classic} 
 
-%%%%%%%%%%%%%% adding packages for bibtex publications  %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% adding packages for BibTeX publications  %%%%%%%%%%%%%%%%%
 \usepackage{url}
 \usepackage{bibentry}
 \makeatletter\let\saved@bibitem\@bibitem\makeatother
 %\usepackage[colorlinks=true,breaklinks=true]{hyperref}		% commented out as is already in modern CV
 \makeatletter\let\@bibitem\saved@bibitem\makeatother
-\usepackage[numbers]{natbib}											% added to get rid of the "\lonely item" error. everthing in this list works [square,sort,comma,numbers]
+\usepackage[numbers]{natbib}											% added to get rid of the "\lonely item" error. everything in this list works [square,sort,comma,numbers]
 
-%%%%%%%%%%%%%% adding packages for formating and other basic functions  %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% adding packages for formatting and other basic functions  %%%%%%%%%%%%%%%%%
 \usepackage[left=0.5in, right=1in, top=1in, bottom=1in]{geometry} % defining the page margins
 \usepackage[bottom]{footmisc}	% added for the footnote to allow the date on the last page
 \usepackage{enumitem}			% added for adjusting the indent of publications. adjusted locally at each list
@@ -58,7 +58,7 @@
 
 \setlength{\hintscolumnwidth}{2.9cm} % change width of left colomn
 
-% build a command for the date modified footnote
+% Build a command for the date-modified footnote
 \newcommand\blfootnote[1]{%
  \begingroup
  \renewcommand\thefootnote{}\footnote{#1}%
@@ -82,7 +82,7 @@
 \faLinkedin \hspace{0.01ex} \httplink{www.linkedin.com/in/Joe-Smith} 
 }
 
-% PDF meta data
+% PDF metadata
 \AfterPreamble{\hypersetup{
  pdfauthor={Joe Smith},
  pdftitle={CV for Joe Smith},
@@ -106,7 +106,7 @@
 	
 	\section{Journal Articles}
 
-  \begin{etaremune}[label={[\reversearabic*]},itemsep=1ex, leftmargin=3.2cm,labelsep=0.3cm]
+  \begin{etaremune}[label={[\reversearabic*]},itemsep=1ex, leftmargin=3.2cm,labelsep=0.3cm,midpenalty=-9000]
     \item \bibentry{Downey2020Millisecondmodelupdating}
     \item \bibentry{Downey2019Durabilityweatherabilitystyrene}
     \item \bibentry{Downey2019Cambasedpassive}
@@ -116,7 +116,7 @@
 
 	\section{Conference Proceedings}
 
-  \begin{etaremune}[label={[\reversearabic*]},itemsep=1ex, leftmargin=3.2cm,labelsep=0.3cm]
+  \begin{etaremune}[label={[\reversearabic*]},itemsep=1ex, leftmargin=3.2cm,labelsep=0.3cm,midpenalty=-9000]
     \item \bibentry{Downey2019MethodologyRealtime}
     \item \bibentry{Downey2018Durabilityassessmentsoft}
     \item \bibentry{Downey2018CrackdetectionRC}
@@ -131,7 +131,7 @@
 	
 	\section{Open Source Hardware}
 	
-		\begin{etaremune}[label={[\reversearabic*]},itemsep=1ex, leftmargin=3.2cm,labelsep=0.3cm]
+		\begin{etaremune}[label={[\reversearabic*]},itemsep=1ex, leftmargin=3.2cm,labelsep=0.3cm,midpenalty=-9000]
 			\item \bibentry{Flemming2022SolarChargedUAV}
 		\end{etaremune}
 			
