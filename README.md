@@ -1,14 +1,11 @@
 
 # Academic-CV-with-BibTeX
-Development of an Academic CV developed around BibTeX which allows for the listing of all publication on the CV from a single .bib file. 
-
-> :warning: **Requires Texlive 2022 or a very updated MikTeX. Note that many Linux program managers are not updated yet. **: Be very careful here!
-
+Development of an Academic CV developed around BibTeX which allows for the listing of all publications on the CV from a single .bib file. 
 
 The CV output looks like this:
 ![Image of NMR](CV_2_pages.jpg)
 
-To get it to compile it is a 3 step process
+To get it to compile it is a 3-step process
 1. Build and compile (F5 in TexStudio) to generate the .aux file.
 1. Run bibtex (F8 or Tools>Commands>BibTeX in TexStudio).
 1. Build and compile (F5 in TexStudio) to generate the PDF.
