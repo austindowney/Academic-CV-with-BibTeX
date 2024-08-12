@@ -10,6 +10,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[letterpaper]{moderncv}
+
+%%%%%%%%%%%%%% define the colors of the CV  %%%%%%%%%%%%%%%%%
+% must be done before setting the style of the CV
+\definecolor{color1}{RGB}{160 0, 10} % USC Garnet, with a little more red
+\definecolor{color2}{RGB}{0,0,0} % black used for title 
+\newcommand{\blueLink}[1]{\textcolor[rgb]{0.02,0.27,0.68}{#1}} %blue used for external links
+
+%%%%%%%%%%%%%% Set the style of the CV  %%%%%%%%%%%%%%%%%
 \moderncvstyle{classic} 
 
 %%%%%%%%%%%%%% adding packages for BibTeX publications  %%%%%%%%%%%%%%%%%
@@ -25,6 +33,7 @@
 \usepackage[bottom]{footmisc}	% added for the footnote to allow the date on the last page
 \usepackage{enumitem}			% added for adjusting the indent of publications. adjusted locally at each list
 \usepackage{adjustbox}
+\usepackage{lmodern} % Added August 2024 after an update in some package caused the error "pdfTeX error (font expansion): auto expansion is only possible with scalable".
 
 %%%%%%%%%%%%%% Added to break long URLs in Bibtex  %%%%%%%%%%%%%%%%%
 % taken from:
@@ -66,10 +75,7 @@
  \endgroup
 }
 
-% define the colors of the CV
-\definecolor{color1}{RGB}{160 0, 10} % USC Garnet, with a little more red
-\definecolor{color2}{RGB}{0,0,0} % black used for title 
-\newcommand{\blueLink}[1]{\textcolor[rgb]{0.02,0.27,0.68}{#1}} %blue used for external links
+
 
 %% define the personal data used in the CV
 \firstname{Joe}
