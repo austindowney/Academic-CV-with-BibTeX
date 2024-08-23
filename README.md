@@ -1,5 +1,5 @@
 
-# Academic-CV-with-BibTeX
+# Academic CV with BibTeX
 Development of an Academic CV developed around BibTeX which allows for the listing of all publications on the CV from a single .bib file. 
 
 The CV output looks like this:
